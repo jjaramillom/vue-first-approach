@@ -12,11 +12,10 @@ import { ref, defineComponent, computed } from '@vue/composition-api';
 
 export default defineComponent({
   name: 'CreatePost',
-  props: {
-  },
+  props: {},
   setup(props, context) {
-    let title = ref('');
-    let content = ref('');
+    const title = ref('');
+    const content = ref('');
 
     const validForm = computed(() => {
       return title.value !== '' && content.value !== '';
@@ -64,24 +63,5 @@ textarea {
   min-width: 200px;
   max-height: 200px;
   width: 200px;
-}
-
-button {
-  display: block;
-  margin: 20px auto 5px auto;
-  background: rgb(147, 147, 151);
-  border: thin solid rgb(70, 70, 70);
-  border-radius: 4px;
-
-  padding: 5px;
-  font-size: 15px;
-
-  &:disabled {
-  border: thin solid rgb(70, 70, 70);
-  }
-
-  &:hover:enabled {
-  background: rgb(168, 168, 168);
-  }
 }
 </style>
